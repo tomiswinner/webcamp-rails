@@ -3,3 +3,6 @@
 <h2>本文</h2>
 <p><%= @list.body %></p>
 <%= link_to '編集する',edit_todolist_path(@list.id) %>
+<p>画像</p>
+<%= attachment_image_tag @list,:image, :fill, 300, 300, format: 'jpeg' %>
+<%= link_to '投稿を削除する',destroy_todolist_path(@list.id),method: :delete,"data-confirm" => "本当に削除しますか？" %>
